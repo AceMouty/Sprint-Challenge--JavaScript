@@ -40,7 +40,17 @@ Edit this document to include your answers after each question. Make sure to lea
 
 3. What is closure?
 
-	Closure is when a fuction has to go up in scope chain to reslove the use of a variable / parameter called that does not exist in the current funcitons scope.
+	Closure is when a fuction has to go up in scope chain to reslove the use of a variable / parameter called that does not exist in the current funcitons scope. Closures are a mechanism that is apart of JS funcitons.
+	
+	- This allows us to pass in an argument into a parent funciton. This argument is now aparat of the parent scope.
+
+	- Now when we declare a new funciton within the parent function, this new funciton has access to not only its scope but also its PARENT scopes. 
+
+	- Since we have access to this parent scope we can now call a parameter / variable that isnt passed to the child, and we are able to do this by using this closrue mechanism 	 bc once the child function sees there is no parameter passed to it, the child funciton will then go into the scope above it (the parent scope) and look for the parameter 		 name to try and resolve the use of the parameter called that does not exist in the child scope.  
+
+	- A child will keep climbing the scope chain, all the way up to global scope, in pursuit of finding the name of the parameter / variable name used.
+
+	- We can only access parameters / varibales that are up the scope chain however outer scopes can NOT go into inner scopes to resolve the use of a parameter / variable.
 
 4. Describe the four rules of the 'this' keyword.
 
