@@ -30,13 +30,42 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Describe the biggest difference between `.forEach` & `.map`.
 
+	`.forEach` just loops over an entire array. Nothing more unless we tell it to do so in the body of the callback funciton.
+	`.map` creates a new copy of the array the method is invoked on, this returns us an array we can change without affecting the original.
+
 2. What is the difference between a function and a method?
+
+	A function is not apart of an object.
+	A method is a function in an object. 
 
 3. What is closure?
 
+	Closure is when a fuction has to go up in scope chain to reslove the use of a variable / parameter called that does not exist in the current funcitons scope. Closures are a mechanism that is apart of JS funcitons.
+	
+	- This allows us to pass in an argument into a parent funciton. This argument is now aparat of the parent scope.
+
+	- Now when we declare a new funciton within the parent function, this new funciton has access to not only its scope but also its PARENT scopes. 
+
+	- Since we have access to this parent scope we can now call a parameter / variable that isnt passed to the child, and we are able to do this by using this closrue mechanism 	 bc once the child function sees there is no parameter passed to it, the child funciton will then go into the scope above it (the parent scope) and look for the parameter 		 name to try and resolve the use of the parameter called that does not exist in the child scope.  
+
+	- A child will keep climbing the scope chain, all the way up to global scope, in pursuit of finding the name of the parameter / variable name used.
+
+	- We can only access parameters / varibales that are up the scope chain however outer scopes can NOT go into inner scopes to resolve the use of a parameter / variable.
+
 4. Describe the four rules of the 'this' keyword.
 
+	- Window Binding: if called globaly 'this' refers to the window as its default context.
+
+	- Implicit binding of 'this': When ever a funciton is called by a preceeding dot. The object before that dot is 'this'. So when creating a method in an object, 'this' is 		   referrering to the object the method is in. This happens mostly in object litterals and is used inside of the objects methods.
+
+	- new binding: Whenever a constructor function is used, 'this' refers to the specific instance of the object that is created and returnes by the constructor function.
+
+	-  Explicit binding, this overrides which object 'this' is referring to.
+
+
 5. Why do we need super() in an extended class?
+
+ 	super is what allows us to inherit from the parent class. Extends calls the class and super points to the extend and allows us to inherit both properties an methods in one go.  
 
 ## Project Set up
 
